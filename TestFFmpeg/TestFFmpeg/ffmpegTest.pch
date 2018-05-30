@@ -1,0 +1,34 @@
+//
+//  ffmpegTest.pch
+//  TestFFmpeg
+//
+//  Created by 刘旭辉 on 16/6/16.
+//  Copyright © 2016年 刘旭辉. All rights reserved.
+//
+
+#ifndef ffmpegTest_pch
+#define ffmpegTest_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//Document目录
+#define DocumentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]//沙盒资源目录
+//tmp目录
+//使用系统的tmp目录iOS系统会自动清理
+//当一个文件超过3天不被读取就会自动删除
+#define AppTmpPath NSTemporaryDirectory()
+//#define AppTmpPath [DocumentPath stringByAppendingPathComponent:@"tmp"]
+//out目录
+#define AppOutPath [DocumentPath stringByAppendingPathComponent:@"out"]
+
+
+//使用的Tag值划分
+//FilePicker页面用到的
+#define TagOfUITableView 20
+#define TagOfUITableViewCell 100
+#define TagOfUIButton 200
+#define TagOfUIAlertView 300
+#define TagOfUIProgress 400
+#define TagOfUILabel 500
+#endif /* ffmpegTest_pch */
