@@ -51,6 +51,8 @@
 #include "libavutil/ffversion.h"
 #include "cmdutils.h"
 
+#include "FFmpegC2OC.h"
+
 #if HAVE_SYS_RESOURCE_H
 #include <sys/time.h>
 #include <sys/resource.h>
@@ -112,7 +114,7 @@ void exit_program(int ret)
 {
     if (program_exit)
         program_exit(ret);
-
+    stopRuning();
 //    exit(ret);
     pthread_exit("all thread");
 }

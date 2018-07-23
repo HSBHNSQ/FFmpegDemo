@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "ffmpeg.h"
-
+#import "FFmpegProgress.h"
 #define DocumentDir [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 #define BundlePath(res) [[NSBundle mainBundle] pathForResource:res ofType:nil]
 #define DocumentPath(res) [DocumentDir stringByAppendingPathComponent:res]
@@ -25,8 +25,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     NSLog(@"%@",DocumentDir);
+//NSThreadWillExitNotification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willexit) name:NSThreadWillExitNotification object:nil];
+    [FFmpegProgress shareInstance].progressBlock = ^(BOOL startRuning, float progress, BOOL stopRuning) {
+        NSLog(@"startRuning:%d",startRuning);
+        NSLog(@"progress:%f",progress);
+        NSLog(@"stopRuning:%d",stopRuning);
+    };
 }
 
+-(void)willexit{
+    NSLog(@"%s",__func__);
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -323,6 +333,33 @@
 }
 - (IBAction)removeLogoBtnClick:(id)sender{
     NSThread * newT = [[NSThread alloc]initWithTarget:self selector:@selector(removeLogo) object:nil];
+    
+    [newT start];
+}
+
+-(void)videoCrop{
+//    ffmpeg -i input_video.mp4 -filter:v "crop=100:120:100:50" output_video.mp4
+    char *movie = (char *)[BundlePath(@"1.mp4") UTF8String];
+    char *outPic = (char *)[DocumentPath(@"crop.mp4") UTF8String];
+    char* argv[] = {
+        "ffmpeg",
+        "-i",
+        movie,
+        "-filter:v",
+        "crop=100:120:100:50",
+        "-vcodec",
+        "mpeg4",
+        outPic
+    };
+    int argc = sizeof(argv)/sizeof(*argv);
+    ffmpeg_main(argc, argv);
+    for(int i=0;i<argc;i++)
+        free(argv[i]);
+    free(argv);
+}
+
+- (IBAction)videoCrop:(id)sender {
+    NSThread * newT = [[NSThread alloc]initWithTarget:self selector:@selector(videoCrop) object:nil];
     
     [newT start];
 }

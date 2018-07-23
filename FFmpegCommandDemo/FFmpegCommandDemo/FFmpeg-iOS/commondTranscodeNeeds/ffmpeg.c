@@ -1685,7 +1685,8 @@ static void print_report(int is_last_report, int64_t timer_start, int64_t cur_ti
             fprintf(stderr, "%s    %c", buf, end);
         } else
             av_log(NULL, AV_LOG_INFO, "%s    %c", buf, end);
-
+        //获取的当前时间
+        setCurrentTime(buf);
     fflush(stderr);
     }
 
@@ -4112,6 +4113,18 @@ static int64_t getmaxrss(void)
 
 static void log_callback_null(void *ptr, int level, const char *fmt, va_list vl)
 {
+//    static int print_prefix = 1;
+//    static int count;
+//    static char prev[1024];
+//    char line[1024];
+//    static int is_atty;
+//    av_log_format_line(ptr, level, fmt, vl, line, sizeof(line), &print_prefix);
+//    strcpy(prev, line);
+//    if (level <= AV_LOG_WARNING){
+//        XLOGE("%s", line);
+//    }else{
+//        XLOGD("%s", line);
+//    }
 }
 
 int ffmpeg_main(int argc, char **argv)

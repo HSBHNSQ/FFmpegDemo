@@ -35,6 +35,9 @@
 		9A9E9E9920BE979100B7C92B /* libavdevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E9E9020BE979100B7C92B /* libavdevice.a */; };
 		9A9E9E9A20BE979100B7C92B /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E9E9120BE979100B7C92B /* libswresample.a */; };
 		9A9E9E9B20BE979100B7C92B /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E9E9320BE979100B7C92B /* libswscale.a */; };
+		9A9E9E9E20BEA9FF00B7C92B /* Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E9E9D20BEA9FE00B7C92B /* Manager.m */; };
+		9ABE3ABB20E0C5270042D21F /* FFmpegProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE3ABA20E0C5270042D21F /* FFmpegProgress.m */; };
+		9ABE3ABE20E0D00B0042D21F /* FFmpegC2OC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE3ABD20E0D00B0042D21F /* FFmpegC2OC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -187,6 +190,12 @@
 		9A9E9E9020BE979100B7C92B /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavdevice.a; sourceTree = "<group>"; };
 		9A9E9E9120BE979100B7C92B /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswresample.a; sourceTree = "<group>"; };
 		9A9E9E9320BE979100B7C92B /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswscale.a; sourceTree = "<group>"; };
+		9A9E9E9C20BEA9FE00B7C92B /* Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
+		9A9E9E9D20BEA9FE00B7C92B /* Manager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Manager.m; sourceTree = "<group>"; };
+		9ABE3AB920E0C5270042D21F /* FFmpegProgress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFmpegProgress.h; sourceTree = "<group>"; };
+		9ABE3ABA20E0C5270042D21F /* FFmpegProgress.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFmpegProgress.m; sourceTree = "<group>"; };
+		9ABE3ABC20E0D00B0042D21F /* FFmpegC2OC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFmpegC2OC.h; sourceTree = "<group>"; };
+		9ABE3ABD20E0D00B0042D21F /* FFmpegC2OC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFmpegC2OC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +251,8 @@
 				9A9E9A9E20BE57B900B7C92B /* ViewController.m */,
 				9A9E9B3720BE584100B7C92B /* MainViewController.h */,
 				9A9E9B3820BE584100B7C92B /* MainViewController.m */,
+				9A9E9E9C20BEA9FE00B7C92B /* Manager.h */,
+				9A9E9E9D20BEA9FE00B7C92B /* Manager.m */,
 				9A9E9AA020BE57B900B7C92B /* Main.storyboard */,
 				9A9E9B3A20BE70F000B7C92B /* 1.mp4 */,
 				9A9E9B3B20BE70F000B7C92B /* ff.jpg */,
@@ -288,6 +299,10 @@
 				9A9E9D7920BE8A3A00B7C92B /* ffmpeg_filter.c */,
 				9A9E9D7A20BE8A3A00B7C92B /* cmdutils.c */,
 				9A9E9D7B20BE8A3A00B7C92B /* ffmpeg.c */,
+				9ABE3ABC20E0D00B0042D21F /* FFmpegC2OC.h */,
+				9ABE3ABD20E0D00B0042D21F /* FFmpegC2OC.m */,
+				9ABE3AB920E0C5270042D21F /* FFmpegProgress.h */,
+				9ABE3ABA20E0C5270042D21F /* FFmpegProgress.m */,
 			);
 			path = commondTranscodeNeeds;
 			sourceTree = "<group>";
@@ -570,13 +585,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ABE3ABE20E0D00B0042D21F /* FFmpegC2OC.m in Sources */,
 				9A9E9D8320BE8A3A00B7C92B /* ffmpeg_opt.c in Sources */,
 				9A9E9D8520BE8A3A00B7C92B /* cmdutils.c in Sources */,
 				9A9E9B3920BE584100B7C92B /* MainViewController.m in Sources */,
 				9A9E9D8420BE8A3A00B7C92B /* ffmpeg_filter.c in Sources */,
 				9A9E9A9F20BE57B900B7C92B /* ViewController.m in Sources */,
+				9ABE3ABB20E0C5270042D21F /* FFmpegProgress.m in Sources */,
 				9A9E9AAA20BE57BA00B7C92B /* main.m in Sources */,
 				9A9E9D8620BE8A3A00B7C92B /* ffmpeg.c in Sources */,
+				9A9E9E9E20BEA9FF00B7C92B /* Manager.m in Sources */,
 				9A9E9A9C20BE57B800B7C92B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

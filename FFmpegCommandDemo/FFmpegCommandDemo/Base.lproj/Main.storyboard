@@ -89,9 +89,16 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eW9-Lj-ITY">
                                 <rect key="frame" x="149" y="334" width="77" height="30"/>
-                                <state key="normal" title="视频图水印"/>
+                                <state key="normal" title="视频去水印"/>
                                 <connections>
                                     <action selector="removeLogoBtnClick:" destination="Sge-Zt-okG" eventType="touchUpInside" id="a33-6O-T84"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uti-rs-oYv">
+                                <rect key="frame" x="155" y="374" width="64" height="30"/>
+                                <state key="normal" title="视频Crop"/>
+                                <connections>
+                                    <action selector="videoCrop:" destination="Sge-Zt-okG" eventType="touchUpInside" id="vbg-Y3-zPz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -99,6 +106,7 @@
                         <constraints>
                             <constraint firstItem="ioj-lp-lHE" firstAttribute="top" secondItem="EPR-Gb-Yp7" secondAttribute="bottom" constant="20" id="0UN-dY-cqU"/>
                             <constraint firstItem="at0-Na-xWc" firstAttribute="top" secondItem="ioj-lp-lHE" secondAttribute="bottom" constant="20" id="4so-QA-AyA"/>
+                            <constraint firstItem="Uti-rs-oYv" firstAttribute="centerX" secondItem="eW9-Lj-ITY" secondAttribute="centerX" id="61y-Vw-YnM"/>
                             <constraint firstItem="EPR-Gb-Yp7" firstAttribute="top" secondItem="nDx-ui-uew" secondAttribute="top" constant="20" id="L0R-fg-3ti"/>
                             <constraint firstItem="at0-Na-xWc" firstAttribute="centerX" secondItem="ioj-lp-lHE" secondAttribute="centerX" id="L5k-D0-xi2"/>
                             <constraint firstItem="pzn-aD-6fQ" firstAttribute="top" secondItem="x7g-NA-CGe" secondAttribute="bottom" constant="20" id="NRw-fp-OJI"/>
@@ -107,6 +115,7 @@
                             <constraint firstItem="x7g-NA-CGe" firstAttribute="centerX" secondItem="at0-Na-xWc" secondAttribute="centerX" id="Zqc-WX-s4s"/>
                             <constraint firstItem="ioj-lp-lHE" firstAttribute="centerX" secondItem="EPR-Gb-Yp7" secondAttribute="centerX" id="eC6-W7-TW4"/>
                             <constraint firstItem="EPR-Gb-Yp7" firstAttribute="centerX" secondItem="nDx-ui-uew" secondAttribute="centerX" id="i1a-by-dpp"/>
+                            <constraint firstItem="Uti-rs-oYv" firstAttribute="top" secondItem="eW9-Lj-ITY" secondAttribute="bottom" constant="10" id="jDx-Ot-PqX"/>
                             <constraint firstItem="x7g-NA-CGe" firstAttribute="top" secondItem="at0-Na-xWc" secondAttribute="bottom" constant="20" id="sMQ-Xg-qos"/>
                             <constraint firstItem="eW9-Lj-ITY" firstAttribute="top" secondItem="pzn-aD-6fQ" secondAttribute="bottom" constant="20" id="vf1-7A-avL"/>
                         </constraints>

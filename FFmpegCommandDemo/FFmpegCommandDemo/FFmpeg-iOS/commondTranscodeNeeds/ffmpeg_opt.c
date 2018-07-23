@@ -41,6 +41,7 @@
 #include "libavutil/pixdesc.h"
 #include "libavutil/pixfmt.h"
 //#include "libavutil/time_internal.h"
+#include "FFmpegC2OC.h"
 
 #define DEFAULT_PASS_LOGFILENAME_PREFIX "ffmpeg2pass"
 
@@ -1057,7 +1058,9 @@ static int open_input_file(OptionsContext *o, const char *filename)
                 dump_attachment(st, o->dump_attachment[i].u.str);
         }
     }
-
+    //获取文件总时长信息
+    setDuration(ic->duration);
+    //释放内存
     for (i = 0; i < orig_nb_streams; i++)
         av_dict_free(&opts[i]);
     av_freep(&opts);
